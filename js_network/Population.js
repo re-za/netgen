@@ -7,30 +7,26 @@
   var makePopulation = function() {
 
     var actors = [];
-    var Individual = {
+    var actorProto = {
 
       init: function(id) {
-        var _o = this
+        var o = this;
 
-        _o.id = id;
-        _o.index = id;
-        _o.foci = [];
-        _o.contacts = []
-        _o.isVisited = false;
-        _o.component = null;
-        _o.distanceTemp = 0;
-        _o.cc = 0;
-        _o.alpha = 0;
-        _o.objType = "Actor"
+        o.objType = "Actor";
+        o.id = id;
+        o.index = id;
+        o.foci = [];
+        o.contacts = [];
+        o.alpha = 0;
 
-        return _o
+        return o;
 
       },
-
       drawO: function() {
+        var o = this;
 
-        this.alpha = __.Rand.randUniform(0, Math.PI/2)
-        //this.alpha = __Rand.randItem([0, Math.PI/2])
+        o.alpha = __.Rand.randUniform(0, Math.PI/2)
+        //o.alpha = __Rand.randItem([0, Math.PI/2])
         // var pCycle = 12;
         // var oCycle = __.Net.cycle;
         // var oModHP = oCycle % (pCycle/2);
@@ -39,24 +35,21 @@
         // var stdO = Math.PI/4;
         // var alpha = __.Rand.randNormal(avgO, stdO);
         //
-        // this.alpha = alpha < 0 ? 0 : alpha > Math.PI/2 ? Math.PI/2 : alpha
+        // o.alpha = alpha < 0 ? 0 : alpha > Math.PI/2 ? Math.PI/2 : alpha
 
-        this.O = __u.makeVector([
-          Math.cos(this.alpha),
-          Math.sin(this.alpha)
+        o.O = __u.makeVector([
+          Math.cos(o.alpha),
+          Math.sin(o.alpha)
         ]);
-        // this.O = __u.makeVector([
-        //   Math.cos(this.alpha),
-        //   Math.sin(this.alpha)
-        // ]);
-        return this.O
+
+        return o.O
       },
 
     };
 
     function init() {
       for (var i = 0; i < _p.size; i++) {
-        actors[i] = Object.create(Individual).init(i)
+        actors[i] = Object.create(actorProto).init(i)
       };
     };
     function outputPerPeriod() {
@@ -70,7 +63,7 @@
     };
 
     //initialize
-    init()
+    init();
 
     //PUBLIC
     return {
@@ -81,7 +74,7 @@
   };
 
 
-  __.factories.makePopulation = makePopulation
+  __.factories.makePopulation = makePopulation;
 
 
 })(this.__ME__);
