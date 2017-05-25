@@ -3,6 +3,7 @@
   var __ = namespace,
       _p = __.config.population;
 
+  console.log('this is added bt remosa');
 
   var makePopulation = function() {
 
