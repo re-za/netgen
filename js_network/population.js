@@ -6,7 +6,6 @@
 
   var makePopulation = function() {
 
-    console.log("--dev mode--");
     var actors = [];
     var actorProto = {
 
