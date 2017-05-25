@@ -3,7 +3,7 @@
   var __ = namespace,
       _p = __.config.population;
 
-  console.log("--dev mode--added by remosa");
+  console.log("--DEV MODE--");
 
   var makePopulation = function() {
 
