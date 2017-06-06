@@ -1,5 +1,7 @@
 (function(namespace) {
 
+  console.log("this is the dev mode");
+  
   var __ = namespace,
       _p = __.config.network;
 
