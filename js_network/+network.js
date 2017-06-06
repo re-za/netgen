@@ -1,6 +1,7 @@
 (function(namespace) {
 
-  console.log("this is the dev mode");
+  console.log("--DEV MODE--");
+  console.log("--June 6--17:40");
   
   var __ = namespace,
       _p = __.config.network;
