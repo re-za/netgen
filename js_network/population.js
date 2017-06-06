@@ -4,6 +4,7 @@
       _p = __.config.population;
 
   console.log("--DEV MODE--");
+  console.log("--June 6--");
 
   var makePopulation = function() {
 
