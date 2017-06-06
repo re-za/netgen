@@ -1,9 +1,5 @@
 (function(namespace) {
 
-  
-  console.log("new version")
-  
-  
   var __ = namespace,
       _p = __.config.network;
 
